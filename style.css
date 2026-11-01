@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #0f172a;
   font-family: sans-serif, tahoma, "roboto";
   display: flex;
   justify-content: center;
@@ -18,4 +18,68 @@ button {
   outline: none;
   font-family: sans-serif, tahoma, "roboto";
   font-size: 1rem;
+}
+
+.title{
+  text-align: center;
+  color: #eff6ff;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.blocks{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  background-color: #1d4ed8;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.blocks div{
+  background: #eff6ff;
+  position: relative;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8px rgba(15, 23, 42, 0.5);
+  overflow: hidden;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.blocks div::after{
+  content: "";
+  background-color: #eff6ff;
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+}
+
+.alert{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: 270px;
+  z-index: -1;
+  padding: 10px 20px;
+  transform: translateX(-50%);
+  color: #0f172a;
+  background: #eff6ff;
+  border: 3px solid #1d4ed8;
+  border-radius: 15px;
+}
+
+.alert span{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.alert button{
+  background-color: #1d4ed8;
+  padding: 10px;
+  border-radius: 5px;
+  color: #eff6ff;
 }
