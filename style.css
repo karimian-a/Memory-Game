@@ -53,7 +53,7 @@ button {
   background-color: #eff6ff;
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 1;
 }
 
 .alert{
