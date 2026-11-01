@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: sans-serif, tahoma, "roboto";
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+  align-items: center;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: sans-serif, tahoma, "roboto";
+  font-size: 1rem;
+}
