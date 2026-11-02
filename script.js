@@ -22,4 +22,24 @@ images.forEach((imgNum) => {
   imgBox.innerHTML = `<img src="./img/${imgNum}.png" alt="program-lang">`;
 
   allIMG.prepend(imgBox);
+
+  imgBox.className = "block";
+});
+
+// ====================<< Show selected box >>====================
+const allBlocks = document.querySelectorAll(".block");
+
+allBlocks.forEach((selectedBlock) => {
+  selectedBlock.addEventListener("click", () => {
+    selectedBlock.classList.toggle("show");
+
+    const shownCards = [...allBlocks].filter((block) =>
+      block.classList.contains("show"),
+    ).length;
+    if (shownCards >= 2) {
+      setInterval(() => {
+        selectedBlock.classList.remove("show");
+      }, 1000);
+    }
+  });
 });

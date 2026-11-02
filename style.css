@@ -37,23 +37,27 @@ button {
   border-radius: 30px;
 }
 
-.blocks div {
+.blocks .block {
   background: #eff6ff;
   position: relative;
   padding: 15px;
   border-radius: 20px;
   box-shadow: 2px 4px 8px rgba(15, 23, 42, 0.5);
   overflow: hidden;
-  transition: all 0.3s;
   cursor: pointer;
 }
 
-.blocks div::after {
+.blocks .block::after {
   content: "";
   background-color: #eff6ff;
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 1;
+  transition: all .2s;
+}
+
+.blocks .block.show::after{
+  opacity: 0;
 }
 
 .alert {
