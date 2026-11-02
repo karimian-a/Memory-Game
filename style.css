@@ -20,14 +20,14 @@ button {
   font-size: 1rem;
 }
 
-.title{
+.title {
   text-align: center;
   color: #eff6ff;
   font-size: 3rem;
   margin-bottom: 50px;
 }
 
-.blocks{
+.blocks {
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -37,26 +37,26 @@ button {
   border-radius: 30px;
 }
 
-.blocks div{
+.blocks div {
   background: #eff6ff;
   position: relative;
   padding: 15px;
   border-radius: 20px;
   box-shadow: 2px 4px 8px rgba(15, 23, 42, 0.5);
   overflow: hidden;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
-.blocks div::after{
+.blocks div::after {
   content: "";
   background-color: #eff6ff;
   position: absolute;
   inset: 0;
-  opacity: 1;
+  opacity: 0.1;
 }
 
-.alert{
+.alert {
   display: flex;
   gap: 50px;
   align-items: center;
@@ -72,12 +72,12 @@ button {
   border-radius: 15px;
 }
 
-.alert span{
+.alert span {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.alert button{
+.alert button {
   background-color: #1d4ed8;
   padding: 10px;
   border-radius: 5px;
