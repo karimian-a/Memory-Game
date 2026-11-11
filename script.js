@@ -30,20 +30,69 @@ function showRandomImg() {
 }
 showRandomImg();
 
-// ====================<< Show selected box >>====================
-const allBlocks = document.querySelectorAll(".block");
+// ====================<< Play Round >>====================
+// select all blocks
+let allBlocks = document.querySelectorAll(".block");
 
-allBlocks.forEach((selectedBlock) => {
-  selectedBlock.addEventListener("click", () => {
-    selectedBlock.classList.toggle("show");
+// play round data
+let selectId = [];
+let selectEl = [];
+let canPlay = true;
+let score = 0;
 
-    const shownCards = [...allBlocks].filter((block) =>
-      block.classList.contains("show"),
-    ).length;
-    if (shownCards >= 2) {
-      setInterval(() => {
-        selectedBlock.classList.remove("show");
-      }, 1000);
-    }
+function clickHandel() {
+  allBlocks.forEach((selectedBlock) => {
+    selectedBlock.addEventListener("click", () => {
+      if (!canPlay) return;
+
+      // show selected block
+      selectedBlock.classList.add("show");
+
+      // set play round data
+      selectEl.push(selectedBlock);
+      selectId.push(selectedBlock.dataset.num);
+
+      // call match block function
+      matchBlock(selectEl, selectId);
+    });
   });
-});
+}
+clickHandel();
+// match blocks
+function matchBlock(el, id) {
+  if (id.length >= 2) {
+    // can play is false
+    canPlay = false;
+
+    // if matched
+    if (id[0] === id[1]) {
+      el.forEach((element) => {
+        setTimeout(() => {
+          element.classList.add("true");
+        }, 500);
+      });
+
+      score++;
+    }
+    // if not matched
+    else {
+      el.forEach((wrong) => {
+        setTimeout(() => {
+          wrong.classList.remove("show");
+        }, 1000);
+      });
+    }
+
+    // reset play round data
+    el.length = 0;
+    id.length = 0;
+
+    // can play is true
+    setTimeout(() => {
+      canPlay = true;
+    }, 800);
+  }
+
+  // if the user wins
+  win(score);
+}
