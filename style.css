@@ -6,7 +6,7 @@
 
 body {
   background-color: #f9fafb;
-  font-family: sans-serif, tahoma, "roboto";
+  font-family: "Orbitron", sans-serif, tahoma, "roboto";
   display: flex;
   justify-content: center;
   height: 100dvh;
@@ -18,6 +18,7 @@ button {
   outline: none;
   font-family: sans-serif, tahoma, "roboto";
   font-size: 1rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .title {
