@@ -16,15 +16,19 @@ shuffleArray(images);
 // ====================<< Show random image >>====================
 const allIMG = document.querySelector(".blocks");
 
-images.forEach((imgNum) => {
-  const imgBox = document.createElement("div");
+function showRandomImg() {
+  images.forEach((imgNum) => {
+    const imgBox = document.createElement("div");
 
-  imgBox.innerHTML = `<img src="./img/${imgNum}.png" alt="program-lang">`;
+    imgBox.innerHTML = `<img src="./img/${imgNum}.png" alt="program-lang">`;
 
-  allIMG.prepend(imgBox);
+    allIMG.prepend(imgBox);
 
-  imgBox.className = "block";
-});
+    imgBox.dataset.num = imgNum;
+    imgBox.className = "block";
+  });
+}
+showRandomImg();
 
 // ====================<< Show selected box >>====================
 const allBlocks = document.querySelectorAll(".block");
