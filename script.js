@@ -96,3 +96,38 @@ function matchBlock(el, id) {
   // if the user wins
   win(score);
 }
+
+// ====================<< winer >>====================
+// select win alert
+const alert = document.querySelector(".alert");
+
+// if the user wins
+function win(score) {
+  if (score === 6) {
+    setTimeout(() => {
+      alert.classList.add("win-alert");
+    }, 1000);
+  }
+}
+
+const playAgain = document.querySelector(".alert button");
+playAgain.addEventListener("click", () => {
+  allBlocks.forEach((item) => {
+    item.classList.remove("show", "true");
+  });
+
+  selectId = [];
+  selectEl = [];
+  canPlay = true;
+  score = 0;
+
+  shuffleArray(images);
+
+  allIMG.innerHTML = "";
+  showRandomImg();
+
+  allBlocks = document.querySelectorAll(".block");
+  clickHandel();
+
+  alert.classList.remove("win-alert");
+});
