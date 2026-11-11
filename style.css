@@ -116,3 +116,24 @@ button {
 .win-alert {
   top: 50px;
 }
+
+/* ========== responsive design ========== */
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .blocks {
+    padding: 15px;
+    gap: 7px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .blocks .block {
+    padding: 10px;
+  }
+
+  .blocks .block img {
+    width: 80px;
+  }
+}
